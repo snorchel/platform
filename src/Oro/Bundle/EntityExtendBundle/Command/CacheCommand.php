@@ -169,7 +169,7 @@ abstract class CacheCommand extends ContainerAwareCommand
         foreach ($aliases as $className => $alias) {
             if (class_exists($className)) {
                 if (class_exists($alias, false)) {
-                    throw new \ReflectionException(
+                    /*throw new \ReflectionException(
                         sprintf(
                             'The alias "%1$s" for the class "%2$s" cannot be registered '
                             . 'because the class "%1$s" is already loaded. '
@@ -178,9 +178,9 @@ abstract class CacheCommand extends ContainerAwareCommand
                             $alias,
                             $className
                         )
-                    );
+                    );*/
                 }
-
+                else
                 class_alias($className, $alias);
             }
         }
